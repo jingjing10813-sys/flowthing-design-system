@@ -1,0 +1,17 @@
+import tokenSource from '../styles/design-tokens.css?raw';
+
+// Read the actual CSS definitions so documentation follows implementation changes.
+export const foundationTokens = Array.from(
+  tokenSource.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g),
+  ([, name, value]) => ({ name, value: value.trim().replace(/\s+/g, ' '), tier: name.startsWith('--ref-') ? 'Reference' : name.startsWith('--sys-') ? 'System' : name.startsWith('--comp-') ? 'Component' : 'Legacy' }),
+);
+export const foundationPages = [
+  {id:'color',title:'Color',description:'팔레트와 역할 기반 색상으로 배경, 텍스트, 기기 상태를 구분합니다.',guidance:'컴포넌트에는 역할을 표현하는 System 토큰을 먼저 사용합니다. 상태는 색상과 함께 텍스트 또는 아이콘으로 전달합니다.',sample:'background: var(--sys-color-bg-primary);\ncolor: var(--sys-color-text-primary);',groups:[['palette','Palette',t=>t.name.startsWith('--ref-palette-')],['roles','Roles',t=>t.name.startsWith('--sys-color-')&&!t.name.includes('gradient')&&!t.name.includes('shadow')]]},
+  {id:'typography',title:'Typography',description:'Urbanist와 Pretendard를 사용하고, 글자 크기로 정보의 위계를 만듭니다.',guidance:'영문과 숫자는 Urbanist, 한글은 Pretendard를 사용합니다. 제목, 본문, 보조 정보에 맞는 크기를 선택하고 자간은 기본값을 유지합니다.',sample:'font-family: var(--sys-font-family-main);\nfont-size: var(--sys-typescale-body-medium);',groups:[['font','Font family',t=>t.name.includes('font-family')],['scale','Type scale',t=>t.name.includes('typescale')||t.name==='--ref-size-base'||/--comp-device-(name|status)-size/.test(t.name)]]},
+  {id:'iconography',title:'Iconography',description:'기기 제어와 내비게이션에 사용하는 아이콘을 확인합니다.'},
+  {id:'elevation',title:'Elevation',description:'그림자와 눌림 표현으로 표면의 깊이와 조작 상태를 구분합니다.',guidance:'화면 위에 떠 있는 표면에는 외부 그림자를, 눌린 조작부에는 내부 그림자를 사용합니다. 같은 역할에는 같은 그림자를 사용합니다.',sample:'box-shadow: var(--sys-shadow-md);',groups:[['surface','Surface shadows',t=>t.name.startsWith('--sys-shadow-')&&!t.name.includes('color')],['controls','Control shadows',t=>(t.name.startsWith('--comp-')||t.name.startsWith('--slider-'))&&t.name.includes('shadow')]]},
+  {id:'gradient',title:'Gradient',description:'기기 제어부의 재질과 연속된 값의 변화를 표현합니다.',guidance:'색온도처럼 연속된 범위를 보여주거나 기존 조작부의 재질을 표현할 때 사용합니다. 장식용 배경보다 값과 상태의 의미를 우선합니다.',sample:'background: var(--comp-slider-gradient-temperature);',groups:[['system','System gradients',t=>t.name.startsWith('--sys-gradient-')||t.name.startsWith('--sys-color-gradient-')],['controls','Control gradients',t=>t.value.includes('gradient(')&&!t.name.startsWith('--sys-')]]},
+  {id:'radius',title:'Radius',description:'버튼과 카드의 모서리 형태를 일관되게 유지합니다.',guidance:'버튼과 카드에 정의된 반경을 우선 사용합니다. 컴포넌트의 크기를 조정할 때도 원형 버튼과 카드의 형태를 함께 확인합니다.',sample:'border-radius: var(--comp-card-radius);',groups:[['radius','Radius tokens',t=>t.name.includes('radius')]]},
+  {id:'spacing',title:'Spacing',description:'카드의 내부 여백과 기준 크기를 확인합니다.',guidance:'현재 토큰으로 정의된 카드 여백과 기준 크기를 보여줍니다. 공통 간격 스케일은 아직 정의되지 않았으며, 화면별 간격을 정리한 뒤 확장할 수 있습니다.',sample:'padding: var(--comp-card-padding);',groups:[['spacing','Spacing tokens',t=>t.name.includes('padding')||t.name.includes('gap')||t.name==='--ref-size-base']]},
+  {id:'state',title:'State',description:'활성, 비활성, 꺼짐 상태를 명확하게 표현합니다.',guidance:'On과 Off는 기기의 상태이고 Disabled는 조작할 수 없는 상태입니다. 비활성 표현을 전원 꺼짐 대신 사용하지 않습니다.',sample:'opacity: var(--sys-opacity-disabled);\ncolor: var(--sys-color-text-disabled);',groups:[['status','Status colors',t=>t.name.startsWith('--sys-color-status-')],['disabled','Disabled',t=>t.name.includes('disabled')],['toggle','On / Off',t=>t.name.startsWith('--comp-toggle-')]]},
+];

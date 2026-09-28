@@ -1,0 +1,13 @@
+.iconography-toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.iconography-toolbar input,.iconography-toolbar select{height:42px;border:1px solid #e5e5e5;border-radius:8px;background:#fff;color:#262626;padding:0 12px;font:inherit;font-size:14px;min-width:0}
+.iconography-toolbar input{flex:1;min-width:180px}
+.iconography-toolbar input:focus-visible,.iconography-toolbar select:focus-visible,.iconography-card:focus-visible{outline:2px solid #737373;outline-offset:3px}
+.iconography-status{min-height:20px;margin:16px 0;color:var(--sys-color-text-tertiary);font-size:12px}
+.iconography-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:12px}
+.iconography-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:0;min-height:148px;padding:16px 8px;border:1px solid #e5e5e5;border-radius:10px;background:#fafafa;color:#262626;font:inherit;text-decoration:none!important;cursor:pointer;transition:background .2s,border-color .2s}
+.iconography-card:hover{background:#f0f0f0;border-color:#d4d4d4}
+.iconography-preview{display:flex;align-items:center;justify-content:center;width:100%;height:56px}
+.iconography-preview svg,.iconography-preview img{flex-shrink:0}
+.iconography-name{font-size:12px;text-align:center;overflow-wrap:anywhere}
+.iconography-card small{font-size:11px;color:var(--sys-color-text-tertiary)}
+@media(max-width:480px){.iconography-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.iconography-toolbar input{flex-basis:100%}}

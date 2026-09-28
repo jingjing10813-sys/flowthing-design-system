@@ -1,0 +1,11 @@
+.track {
+  position: relative;
+  width: 100%;
+  height: var(--comp-slider-track-height, 12px);
+  border-radius: var(--comp-slider-track-radius, 6px);
+  background: var(--comp-slider-track-bg);
+  border: var(--comp-slider-track-border);
+  box-shadow: var(--comp-slider-track-shadow);
+  display: flex;
+  align-items: center;
+}

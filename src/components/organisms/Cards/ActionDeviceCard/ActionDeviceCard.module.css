@@ -1,0 +1,57 @@
+.card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 140px;
+  background-color: var(--comp-card-bg-off); /* Default Off/Inactive */
+  border-radius: var(--comp-card-radius);
+  padding: 20px; /* Reduced from 24px for better fit in half-width */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--sys-shadow-md);
+  
+  /* Text defaults for inactive state */
+  --comp-device-name-color: var(--comp-device-name-color-inverse);
+  --comp-device-status-color: var(--comp-device-name-color-inverse);
+  --sys-color-text-tertiary: var(--comp-device-status-color-inverse);
+}
+
+.compact {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.compact .infoWrapper {
+  width: 100%;
+  align-items: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+
+.compact .actionWrapper {
+  align-self: flex-end;
+}
+
+.card.active {
+  background-color: var(--comp-card-bg); /* Active State */
+  
+  /* Reset text colors */
+  --comp-device-name-color: var(--sys-color-text-primary);
+  --comp-device-status-color: var(--sys-color-text-tertiary);
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.actionWrapper {
+  flex-shrink: 0;
+}

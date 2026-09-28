@@ -1,0 +1,132 @@
+.container {
+  position: relative;
+  width: 67px;
+  height: 32px;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box; 
+  isolation: isolate; /* Create specific stacking context for blend modes */
+}
+
+/* Neumorphic Inner Shadow - Screen Layer (Light) */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset -8px -8px 16px var(--color-shadow-light);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+/* Neumorphic Inner Shadow - Multiply Layer (Dark) */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 8px 8px 16px var(--color-shadow-dark);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+/* OFF State */
+.off {
+  border-color: var(--comp-toggle-border-off);
+  background: var(--comp-toggle-bg-off);
+}
+
+/* ON State */
+.on {
+  border-color: var(--comp-toggle-border-on);
+  background: var(--comp-toggle-bg-on);
+}
+
+.thumbOverride {
+  box-sizing: border-box;
+  /* Positioning overrides */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) !important; 
+  transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: 2; /* Ensure thumb is above container shadows */
+
+  /* Enforce shape */
+  width: 28.8px !important;
+  height: 28.8px !important;
+  border-radius: 50% !important;
+
+  /* Variable overrides */
+  --comp-slider-thumb-size: 28.8px;
+  --comp-slider-thumb-bg: var(--comp-button-bg-enabled);
+  --comp-slider-thumb-border: 1.177px solid var(--sys-color-border-secondary);
+  
+  /* Disable default shadow to use custom pseudo-elements */
+  --comp-slider-thumb-shadow: none; 
+}
+
+/* Drop Shadow - Screen Layer (Light) */
+.thumbOverride::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: -4px -4px 8px var(--color-shadow-light);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* Drop Shadow - Multiply Layer (Dark) */
+.thumbOverride::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 4px 4px 8px var(--color-shadow-dark);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.thumbOff {
+  left: 0px; /* Flush left */
+}
+
+.thumbOn {
+  left: calc(100% - 28.8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumbOverride { transition: none; }
+}
+
+
+/* Small Variant */
+.small {
+  width: 48px;
+  height: 26px;
+}
+
+.small .thumbOverride {
+  width: 20px !important;
+  height: 20px !important;
+  /* Recalculate thumb size variable if used elsewhere, but here it's overridden directly above */
+}
+
+.small.on .thumbOverride {
+  left: 23px; /* 48 - 2(border) - 20(thumb) - 3(gap) = 23 */
+}
+
+.small.off .thumbOverride {
+  left: 3px; 
+}

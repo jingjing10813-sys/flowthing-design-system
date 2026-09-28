@@ -1,0 +1,251 @@
+/* SpeakerControl Page Styles */
+/* 기존 LightingControl/AirConditionerControl 패턴을 따름 */
+
+.page {
+  width: 100%;
+  max-width: 480px; /* 모바일 프레임 크기 */
+  margin: 0 auto;
+  height: 1040px; /* 고정 프레임 높이 */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* 프레임 고정, 내부 스크롤 */
+  background-color: var(--color-bg-app);
+}
+
+.backgroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.colorOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--sys-color-page-bg-start) 0%, var(--sys-color-page-bg-end) 100%);
+  mix-blend-mode: screen;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  height: 100%;
+  flex: 1;
+  overflow-y: auto; /* 내부 스크롤 */
+  scrollbar-width: none; /* 스크롤바 숨김 Firefox */
+  -ms-overflow-style: none; /* 스크롤바 숨김 IE/Edge */
+}
+
+.content::-webkit-scrollbar {
+  display: none; /* 스크롤바 숨김 Chrome/Safari */
+}
+
+/* Header - LightingControl과 동일 */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  margin-left: -10px; /* 아이콘을 컨텐츠 가장자리에 맞춤 */
+  cursor: pointer;
+  color: var(--sys-color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.backButton:active {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.headerSubtitle {
+  font-family: var(--ref-font-family-base);
+  font-size: 14px;
+  color: var(--sys-color-text-secondary);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.headerMainTitle {
+  font-family: var(--ref-font-family-base);
+  font-size: 20px;
+  color: var(--sys-color-text-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Power Card Row */
+.cardRow {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+/* Volume Control Card - LightingControl의 sliderCard 패턴 */
+.sliderCard {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  background-color: var(--comp-card-bg-translucent);
+  padding: 84px 24px 40px 24px; /* Top +60px, Bottom +16px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  box-sizing: border-box;
+}
+
+.readoutContainer {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.readoutValue {
+  font-family: var(--ref-font-family-base);
+  font-size: 32px;
+  font-weight: 400; /* Regular */
+  color: var(--sys-color-text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.readoutLabel {
+  font-family: var(--ref-font-family-base);
+  font-size: 16px;
+  color: var(--sys-color-text-tertiary);
+  font-weight: 400;
+}
+
+.sliderCenterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Now Playing Badge - AirConditioner의 currentModeDisplay 패턴 */
+.nowPlayingBadge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: var(--ref-font-family-base);
+  font-size: 13px;
+  color: var(--sys-color-text-primary);
+  font-weight: 600;
+  z-index: 10;
+  
+  /* Flexbox for icon + text */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
+  /* Badge Styling */
+  background-color: var(--comp-card-bg-translucent);
+  padding: 6px 12px;
+  border-radius: 100px; /* Pill shape */
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  
+  /* Text Overflow 처리 */
+  max-width: 200px;
+}
+
+.nowPlayingBadge span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; /* flexbox에서 text-overflow가 작동하도록 */
+}
+
+/* Playback Controls - MediaPlayback 클러스터 */
+.playbackRow {
+  width: 100%;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-family: var(--ref-font-family-base);
+  font-size: 18px;
+  color: var(--sys-color-text-primary);
+  font-weight: 600;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Disabled State - 기존 패턴과 동일 */
+.controlsDisabled {
+  opacity: 0.4;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
+
+/* 반응형 - 기존 패턴과 동일 */
+@media (max-width: 480px) {
+  .content {
+    padding: 24px;
+  }
+
+  .sliderCard {
+    padding: 84px 20px 40px 20px;
+  }
+
+  .buttonGroup {
+    gap: 12px;
+  }
+}

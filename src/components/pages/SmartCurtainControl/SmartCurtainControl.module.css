@@ -1,0 +1,330 @@
+.page {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    height: 1040px; /* Internal Frame Height */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; /* Fix frame, scroll internal */
+    background-color: var(--color-bg-app);
+}
+
+.backgroundLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.colorOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Neutral/Daylight Background */
+    background: linear-gradient(180deg, var(--sys-color-page-bg-start) 0%, var(--sys-color-page-bg-end) 100%);
+    mix-blend-mode: screen;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    height: 100%;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header Styles */
+.header {
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.backButton {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    margin-left: -10px;
+    cursor: pointer;
+    color: var(--sys-color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.backButton:active {
+    background: rgba(0,0,0,0.05);
+}
+
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.headerSubtitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 14px;
+    color: var(--sys-color-text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.headerMainTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 20px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Row & Card Styles */
+.cardRow {
+    margin-bottom: 24px;
+}
+
+.mainControlCard {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: var(--comp-card-bg-translucent);
+    padding: 24px; /* Standard padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    /* min-height: 200px; Remove fixed constraint */
+    height: auto;
+    overflow: visible;
+}
+
+.readoutContainer {
+    /* position: absolute; <-- Removed absolute positioning */
+    /* top: 24px; */
+    /* left: 24px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 24px; /* Space between title/readout and slider */
+}
+
+.readoutValue {
+    font-family: var(--ref-font-family-base);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--sys-color-text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.readoutLabel {
+    font-family: var(--ref-font-family-base);
+    font-size: 16px;
+    color: var(--sys-color-text-tertiary);
+    font-weight: 400;
+}
+
+/* Disabled State Visuals */
+.controlsDisabled {
+    opacity: 0.4;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+/* Section Styles */
+.sectionRow {
+    width: 100%;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.sectionTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 18px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+}
+
+/* Automation / Smart Schedule Styles */
+.capabilityCard {
+    background-color: var(--comp-card-bg-translucent);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.capabilityCard.disabled {
+    opacity: 0.6;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.cardTitleBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--sys-color-text-primary);
+    margin-bottom: 4px;
+}
+
+.cardStatus {
+    font-size: 14px;
+    color: var(--sys-color-status-active);
+    font-weight: 500;
+}
+
+.cardStatus.inactive {
+    color: var(--sys-color-text-tertiary);
+}
+
+.controlsArea {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+.currentModeDisplay {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: var(--ref-font-family-base);
+    font-size: 13px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+    z-index: 10;
+    
+    /* Badge Styling */
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 6px 12px;
+    border-radius: 100px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Slider Content Wrapper to fix layout issues */
+.sliderContentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Custom Horizontal Slider Styling for Smart Curtain (Figma) */
+.mainControlCard :global(.horizontal-slider-wrapper) {
+    /* Spacing requested by user */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure full width */
+}
+
+.mainControlCard :global(.horizontal-slider-container) {
+    /* Track (Container) */
+    --slider-track-bg: rgba(193, 193, 193, 0.57);
+    --slider-track-shadow: none;
+
+    /* Fill (Left Frame) */
+    --slider-fill-bg: var(--sys-color-bg-primary);
+    /* Shadow casting to the Right as per vertical design "10px straight", rotated logic means right */
+    --slider-fill-shadow: 10px 0px 9.3px 0px rgba(85, 85, 85, 0.23);
+}
+
+/* Ensure icons have contrast against white fill? Left icon is on top of fill. */
+.mainControlCard :global(.horizontal-slider-icon) {
+    /* If left icon inside white fill, it needs dark color */
+    mix-blend-mode: difference; /* Optional: Ensure visibility */
+}
+
+/* Control Buttons (Figma Neumorphism) */
+.controlButtonsRow {
+    display: flex;
+    gap: 39px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px; /* Increased margin from slider to push buttons down cleanly */
+    margin-bottom: 10px; /* Small bottom margin for safety */
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.controlBtn {
+    width: 49px;
+    height: 49px;
+    border-radius: 27px;
+    border: 1px solid var(--sys-color-border-secondary);
+    background-image: linear-gradient(-30deg, rgb(232, 232, 232) 11.25%, rgb(248, 248, 248) 84.42%);
+    box-shadow: -2px -2px 4px 0px rgba(255, 255, 255, 0.4), 2px 2px 4px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.controlBtn:active {
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+}
+
+/* Inner highlight border simulation */
+.btnInnerShadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    box-shadow: inset 1px 1px 2px 0px rgba(255, 255, 255, 0.25);
+    pointer-events: none;
+}

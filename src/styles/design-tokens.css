@@ -1,0 +1,299 @@
+/* 
+  Design Tokens (W3C Standard)
+  
+  Tier 1: Reference (Primitives)
+  Tier 2: System (Semantics)
+  Tier 3: Component (Specifics)
+*/
+
+:root {
+  /* ========================================= */
+  /* Tier 1: Reference Tokens (Primitives)     */
+  /* ========================================= */
+  
+  /* Palette: Neutral Scale (Pure Grayscale) */
+  --ref-palette-neutral-0: #ffffff;
+  --ref-palette-neutral-10: #f8f8f8;
+  --ref-palette-neutral-50: #f0f0f0;
+  --ref-palette-neutral-100: #e8e8e8;
+  --ref-palette-neutral-200: #c7c7c7; /* Was 300 */
+  --ref-palette-neutral-300: #b7b7b7; /* Was 400 */
+  --ref-palette-neutral-400: #a3a3a3; /* Was 500 */
+  --ref-palette-neutral-500: #9f9f9f; /* Was 600 */
+  --ref-palette-neutral-700: #555555; /* Was Pure 700 */
+  --ref-palette-neutral-1000: #000000;
+  
+  /* Palette: Neutral Variant (Cool/Slate) */
+  --ref-palette-neutral-variant-10: #f7f8fa; /* Was 20 */
+  --ref-palette-neutral-variant-20: #f4f6f8; /* Was 30 */
+  --ref-palette-neutral-variant-30: #f2f3f5; /* Was 40 */
+  --ref-palette-neutral-variant-100: #e5e6eb; /* Was 200 */
+  --ref-palette-neutral-variant-600: #86909c; /* Was 700 */
+  --ref-palette-neutral-variant-700: #4e5969; /* Was 800 */
+  --ref-palette-neutral-variant-900: #1d2129; /* Was 900 */
+  
+  /* Palette: Brand / Status */
+  --ref-palette-orange-400: #fb8c6f;
+  --ref-palette-orange-500: #ff9f0a;
+  --ref-palette-orange-600: #ff7043;
+  --ref-palette-yellow-400: #e6d378;
+  --ref-palette-yellow-500: #ffc107;
+  --ref-palette-green-400: var(--color-neutral-400);
+  --ref-palette-blue-50: #e3f2fd;
+  --ref-palette-blue-100: #bbdefb;
+  --ref-palette-blue-200: #90caf9;
+  --ref-palette-blue-300: #64b5f6;
+  --ref-palette-blue-500: #2196f3;
+  --ref-palette-blue-600: #1e88e5;
+  --ref-palette-blue-700: #1976d2;
+  --ref-palette-blue-800: #1565c0;
+  --ref-palette-blue-900: #0d47a1;
+
+  /* Fonts */
+  --ref-font-family-base: 'Urbanist', 'Pretendard Variable', 'Pretendard', sans-serif;
+
+  /* Sizes */
+  --ref-size-base: 16px;
+
+  /* ========================================= */
+  /* Tier 2: System Tokens (Semantics)         */
+  /* ========================================= */
+
+  /* Backgrounds */
+  --sys-color-bg-primary: var(--ref-palette-neutral-0);
+  --sys-color-bg-secondary: var(--ref-palette-neutral-variant-10);
+  --sys-color-bg-tertiary: var(--ref-palette-neutral-variant-30);
+  --sys-color-bg-app: var(--ref-palette-neutral-variant-20);
+  --sys-color-bg-disabled: var(--ref-palette-neutral-50);
+
+  /* Text */
+  --sys-color-text-primary: var(--ref-palette-neutral-variant-900);
+  --sys-color-text-secondary: var(--ref-palette-neutral-variant-700);
+  --sys-color-text-tertiary: var(--ref-palette-neutral-variant-600);
+  --sys-color-text-disabled: var(--ref-palette-neutral-500);
+  --sys-color-text-inverse: var(--ref-palette-neutral-0);
+  --sys-color-text-subtle: var(--ref-palette-neutral-700);
+
+  /* Borders */
+  --sys-color-border-primary: var(--ref-palette-neutral-variant-100);
+  --sys-color-border-secondary: var(--ref-palette-neutral-200);
+  
+  /* Status */
+  --sys-color-status-active: var(--ref-palette-orange-500);
+  --sys-color-status-warm: var(--ref-palette-orange-600);
+  --sys-color-status-cool: var(--ref-palette-blue-500);
+  
+  --sys-color-temp-warm: var(--ref-palette-orange-400);
+  --sys-color-temp-neutral: var(--ref-palette-yellow-400);
+  --sys-color-temp-cool: var(--ref-palette-green-400);
+
+  /* Temperature Control Colors - Air Conditioner */
+  --sys-color-temp-ac-cool-strong: var(--ref-palette-blue-800); /* Low Temp */
+  --sys-color-temp-ac-cool-mid: var(--ref-palette-blue-200);
+  --sys-color-temp-ac-cool-weak: var(--ref-palette-neutral-variant-100); /* High Temp (Gray/Off) */
+
+  /* Temperature Control Colors - Refrigerator (Fridge) */
+  --sys-color-temp-fridge-cold: var(--ref-palette-blue-600); /* -2°C */
+  --sys-color-temp-fridge-mid: var(--ref-palette-blue-300); /* 3°C */
+  --sys-color-temp-fridge-warm: var(--ref-palette-blue-100); /* 8°C */
+
+  /* Temperature Control Colors - Refrigerator (Freezer) */
+  --sys-color-temp-freezer-cold: var(--ref-palette-blue-900); /* -24°C */
+  --sys-color-temp-freezer-mid: var(--ref-palette-blue-700); /* -18°C */
+  --sys-color-temp-freezer-warm: var(--ref-palette-blue-500); /* -16°C */
+  
+  /* Opacity */
+  --sys-opacity-disabled: 0.4;
+
+  /* Gradients */
+  --sys-gradient-active: linear-gradient(135deg, var(--ref-palette-orange-500) 0%, var(--ref-palette-yellow-500) 100%);
+  
+  /* Room Gradients (Start/End pairs for dynamic interpolation) */
+  --sys-color-gradient-orange-start: var(--color-neutral-300);
+  --sys-color-gradient-orange-end: var(--color-neutral-100);
+  
+  --sys-color-gradient-blue-start: var(--color-neutral-300);
+  --sys-color-gradient-blue-end: var(--color-neutral-100);
+  
+  --sys-color-gradient-green-start: var(--color-neutral-300);
+  --sys-color-gradient-green-end: var(--color-neutral-100);
+  
+  --sys-color-gradient-purple-start: var(--color-neutral-300);
+  --sys-color-gradient-purple-end: var(--color-neutral-100);
+
+  /* Page Backgrounds (Generic/Neutral) */
+  --sys-color-page-bg-start: rgba(242, 243, 245, 0.52);
+  --sys-color-page-bg-end: rgba(242, 243, 245, 0.85);
+  
+  /* Typography */
+  --sys-font-family-main: var(--ref-font-family-base);
+
+  /* Typography Scale */
+  --sys-typescale-display-large: 48px;
+  --sys-typescale-display-medium: 36px;
+  --sys-typescale-heading-large: 28px;
+  --sys-typescale-heading-medium: 20px;
+  --sys-typescale-body-large: 18px;
+  --sys-typescale-body-medium: 16px;
+  --sys-typescale-body-small: 14px;
+  --sys-typescale-detail: 12px;
+
+  /* Shadows (Elevation) */
+  --sys-shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --sys-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --sys-shadow-lg: 0 4px 10px rgba(0,0,0,0.15);
+
+  /* Shadows (Neumorph) */
+  --sys-shadow-neu-flat-light: -2px -2px 4px 0px rgba(255, 255, 255, 0.9);
+  --sys-shadow-neu-flat-dark: 2px 2px 4px 0px rgba(0, 0, 0, 0.1); /* Standard Button Shadow */
+  
+  --sys-shadow-neu-pressed-light: inset -1px -1px 2px 0px rgba(61, 61, 61, 0.25);
+  --sys-shadow-neu-pressed-dark: inset 2px 2px 4px 0px rgba(0, 0, 0, 0.29);
+  
+  /* System Shadow Colors (for composite shadows) */
+  --sys-shadow-color-light: #ffffff;
+  --sys-shadow-color-dark: #b0b0b0;
+
+  /* ========================================= */
+  /* Tier 3: Component Tokens                  */
+  /* ========================================= */
+
+  /* Component: Button */
+  --comp-button-size: 53px;
+  --comp-button-radius: 26.5px;
+  
+  /* Button - Enabled (Off) */
+  --comp-button-bg-enabled: linear-gradient(-30deg, #e8e8e8 11.25%, #f8f8f8 84.42%);
+  --comp-button-shadow-enabled: 
+    2px 2px 4px 0px var(--sys-shadow-light),
+    -2px -2px 4px 0px rgba(0, 0, 0, 0.08);
+  
+  --comp-button-text-default: var(--sys-color-text-subtle);
+  --comp-button-border-default: var(--sys-color-border-secondary);
+
+  /* Button - Active (On / Pressed) */
+  --comp-button-bg-active: linear-gradient(240deg, var(--ref-palette-neutral-100) 14%, var(--ref-palette-neutral-10) 87.17%); /* #e8e8e8 -> #f8f8f8 */
+  --comp-button-shadow-active: 
+    inset 1px 1px 2px 0px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 4px 0px rgba(255, 255, 255, 0.8),
+    inset 2px 2px 4px 0px rgba(0, 0, 0, 0.29);
+  --comp-button-icon-color-active: var(--sys-color-status-active);
+
+  /* Button - Disabled */
+  --comp-button-border-disabled: var(--ref-palette-neutral-500); /* #9f9f9f */
+  --comp-button-text-disabled: var(--sys-color-text-disabled);
+  --comp-button-opacity-disabled: 0.7;
+  --comp-button-shadow-disabled:
+    -2px -2px 4px 0px rgba(255, 255, 255, 0.3),
+    2px 2px 4px 0px rgba(0, 0, 0, 0.08);
+    
+  /* Component: Slider */
+  --comp-slider-track-height: 12px;
+  --comp-slider-track-radius: 35px;
+  --comp-slider-track-bg: #e5e5e5;
+  --comp-slider-track-border: 1px solid #a3a3a3;
+  --comp-slider-track-shadow: none;
+  
+  --comp-slider-fill-bg: #737373;
+  
+  --comp-slider-thumb-size: 20px;
+  --comp-slider-thumb-bg: linear-gradient(-30deg, #e8e8e8 11.25%, #f8f8f8 84.42%);
+  --comp-slider-thumb-border: 1px solid var(--sys-color-border-secondary);
+  --comp-slider-thumb-shadow: 0px 8px 8px 0px rgba(0,0,0,0.25);
+  --comp-slider-thumb-shadow-active: 0px 4px 4px 0px rgba(0,0,0,0.25);
+
+  --comp-slider-tick-bg: rgba(0, 0, 0, 0.2);
+  --comp-slider-tick-active-bg: rgba(255, 255, 255, 0.9);
+  --comp-slider-label-color: var(--sys-color-text-tertiary);
+  --comp-slider-label-active-color: var(--sys-color-text-primary);
+
+  /* Component: Card */
+  --comp-card-bg: #fafafa;
+  --comp-card-bg-translucent: rgba(255, 255, 255, 0.65); /* Semi-transparent white for control pages */
+  --comp-card-bg-off: rgba(0, 0, 0, 0.36);
+  --comp-card-radius: 20px;
+  --comp-card-padding: 24px;
+  
+  /* Component: Device Info */
+  --comp-device-name-size: 20px;
+  --comp-device-name-color: var(--ref-palette-neutral-1000);
+  --comp-device-name-color-inverse: #ffffff;
+  --comp-device-status-size: 13px;
+  --comp-device-status-color: #868686;
+  --comp-device-status-color-inverse: rgba(255, 255, 255, 0.95);
+  
+  /* Legacy/Specific (To be refactored further) */
+  --slider-gradient-silver-warm: linear-gradient(90deg, #515151 0%, #B7B7B7 100%);
+  --slider-gradient-silver-cool: linear-gradient(to left, #515151 0%, #B7B7B7 100%);
+  --slider-gradient-silver-vertical: linear-gradient(180deg, #515151 0%, #B7B7B7 100%);
+  --slider-thumb-gradient-matte: linear-gradient(-30deg, #e8e8e8 11.25%, #f8f8f8 84.42%);
+  --slider-thumb-border-color: var(--sys-color-border-secondary);
+  --slider-knob-shadow-large: 0px 12px 24px 0px rgba(0, 0, 0, 0.25);
+  --slider-icon-color-dark: #515151;
+  --slider-icon-color-light: var(--ref-palette-neutral-0);
+
+  /* ========================================= */
+  /* LEGACY COMPATIBILITY (Do not remove yet)  */
+  /* ========================================= */
+  --font-family: var(--ref-font-family-base);
+  
+  --color-text-1: var(--sys-color-text-primary);
+  --color-text-2: var(--sys-color-text-secondary);
+  --color-text-3: var(--sys-color-text-tertiary);
+  
+  --color-border: var(--sys-color-border-primary);
+  
+  --color-fill-1: var(--sys-color-bg-secondary);
+  --color-fill-2: var(--sys-color-bg-tertiary);
+  
+  --color-bg-white: var(--sys-color-bg-primary);
+  --color-bg-app: var(--sys-color-bg-app);
+  
+  --color-status-active: var(--sys-color-status-active);
+  --color-status-warm: var(--sys-color-status-warm);
+  --color-status-cool: var(--sys-color-status-cool);
+  
+  --color-temp-warm: var(--sys-color-temp-warm);
+  --color-temp-neutral: var(--sys-color-temp-neutral);
+  --color-temp-cool: var(--sys-color-temp-cool);
+  
+  --color-shadow-light: var(--sys-shadow-light);
+  --color-shadow-dark: var(--sys-shadow-dark);
+
+  /* ========================================= */
+  /* NEW ADDITIONS (Refactoring)               */
+  /* ========================================= */
+  
+  /* Status: Danger / Error */
+  --sys-color-status-danger: #FF4D4F;
+
+  /* Button: Neumorph Dark (Transparent) */
+  --comp-button-bg-neumorph-dark: linear-gradient(150deg, rgba(255, 255, 255, 0.35) 15.58%, rgba(0, 0, 0, 0.05) 88.75%);
+  --comp-button-border-neumorph-dark: transparent; /* Changed from rgba(0, 0, 0, 0.05) to prevent uneven border appearance */
+  --comp-button-shadow-neumorph-dark: 
+      -2px -2px 4px 0px rgba(255, 255, 255, 0.15), 
+      2px 2px 4px 0px rgba(0, 0, 0, 0.08);
+
+  /* Slider: Legacy Mappings */
+  --comp-slider-track-bg-silver: var(--slider-gradient-silver-vertical);
+  --comp-slider-icon-color-dark: var(--ref-palette-neutral-700);
+  --comp-slider-icon-color-light: var(--ref-palette-neutral-0);
+
+  /* Component: Toggle */
+  --comp-toggle-bg-off: linear-gradient(to right, var(--ref-palette-neutral-700) 0%, var(--ref-palette-neutral-500) 100%);
+  --comp-toggle-bg-on: linear-gradient(to right, #f2e6a4 0%, #fed701 100%);
+  --comp-toggle-border-off: var(--sys-color-border-secondary);
+  --comp-toggle-border-on: var(--ref-palette-neutral-100);
+
+  /* Component: Scene Gradients */
+  --sys-gradient-scene-morning: linear-gradient(135deg, #FF9F0A 0%, #FFCC80 100%);
+  --sys-gradient-scene-night: linear-gradient(135deg, #32465A 0%, #15191E 100%);
+  --sys-gradient-scene-away: linear-gradient(135deg, #9F9F9F 0%, #757575 100%);
+
+  /* Component: Temperature Slider */
+  --comp-slider-gradient-temperature: linear-gradient(90deg, #FFCD94 0%, #FFF3E0 50%, #DAF0FF 100%);
+
+  /* Component: Gauge */
+  --comp-gauge-track-stroke: var(--ref-palette-neutral-100);
+}
+

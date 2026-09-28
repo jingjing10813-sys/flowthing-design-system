@@ -1,0 +1,92 @@
+/* src/components/molecules/Linear/HorizontalSlider/HorizontalSlider.css */
+.horizontal-slider-wrapper {
+    display: flex;
+    flex-direction: column; /* Or row if value should be on side */
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.horizontal-slider-container {
+    position: relative;
+    /* width/height controlled via style props or usage */
+    border-radius: 36px;
+    overflow: hidden;
+    /* Base: White or Variable */
+    background: var(--slider-track-bg, var(--color-bg-white));
+    box-shadow: var(--slider-track-shadow, none);
+    touch-action: none;
+    user-select: none;
+    display: flex;
+    flex-direction: row; /* Horizontal */
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    cursor: pointer;
+    transform: translateZ(0);
+}
+
+.horizontal-slider-frame-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* Gradient Left (Dark) -> Right (Light) or Variable */
+    background: var(--slider-fill-bg, var(--slider-gradient-silver-warm));
+    box-shadow: var(--slider-fill-shadow, none);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.horizontal-slider-frame-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: transparent; 
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Icons */
+.horizontal-slider-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 20;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--slider-icon-color-light); 
+}
+
+/* Handle Container */
+.horizontal-slider-handle-container {
+    position: absolute;
+    top: 50%;
+    /* transform handled in JSX */
+    z-index: 30;
+    cursor: grab;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-slider-handle-container:active {
+    cursor: grabbing;
+}
+
+.horizontal-slider-value {
+    font-family: var(--ref-font-family-base);
+    font-size: 16px;
+    color: var(--color-text-1);
+    font-weight: 500;
+}
+
+/* Blind Variant Support if needed */
+/* .horizontal-slider-container.blind { ... } */

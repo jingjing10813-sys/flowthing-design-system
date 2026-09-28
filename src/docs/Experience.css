@@ -1,0 +1,8 @@
+.experience-shell{width:100%;max-width:393px;margin-inline:auto;min-height:100svh;background:var(--color-neutral-100)}
+.experience-bar{display:flex;justify-content:space-between;padding:14px 20px;background:var(--color-neutral-100);font-size:11px;gap:16px}.experience-bar a{color:var(--color-neutral-600)}
+.experience-shell [data-device-screen]{width:100%;max-width:393px;min-width:0;height:auto;min-height:calc(100svh - 45px);border-radius:0}
+.experience-shell [data-device-content]{height:auto;min-height:calc(100svh - 45px);overflow:visible;padding-bottom:max(28px,env(safe-area-inset-bottom))}
+.experience-shell [data-device-wrap]{flex-wrap:wrap;overflow:visible}
+.experience-shell [data-device-screen]>:first-child:not([data-device-content]){overflow:hidden}
+.experience-missing{padding:32px}
+

@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px; /* Hit area */
+  cursor: pointer;
+  touch-action: none; /* Prevent scrolling while dragging */
+  height: 48px; /* Hit area */
+  cursor: pointer;
+  touch-action: none; /* Prevent scrolling while dragging */
+  margin-bottom: 24px; /* Space for labels */
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--comp-slider-fill-bg);
+  border-radius: inherit;
+  pointer-events: none; /* Let clicks pass through to track */
+}
+
+.tick {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: var(--comp-slider-tick-bg);
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tick.active {
+  background-color: var(--comp-slider-tick-active-bg);
+}
+
+.label {
+  position: absolute;
+  top: 28px; /* Below track */
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: var(--comp-slider-label-color);
+  font-family: var(--ref-font-family-base);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.label.active {
+  color: var(--comp-slider-label-active-color);
+  font-weight: 600;
+}

@@ -1,0 +1,120 @@
+/* Button.module.css */
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--comp-button-size);
+  height: var(--comp-button-size);
+  border-radius: var(--comp-button-radius);
+  border: 1px solid var(--comp-button-border-default);
+  cursor: pointer;
+  outline: none;
+  font-family: var(--ref-font-family-base);
+  transition: all 0.2s ease;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  color: var(--comp-button-text-default);
+  font-size: var(--sys-typescale-body-small);
+  -webkit-tap-highlight-color: transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.root:focus,
+.root:focus-visible,
+.root:hover {
+  outline: none;
+}
+
+/* Binary = off (Default/Normal) */
+.off {
+  background: var(--comp-button-bg-enabled);
+  box-shadow: var(--sys-shadow-neu-flat-light), var(--sys-shadow-neu-flat-dark);
+  border-color: var(--comp-button-border-default);
+}
+
+.off::after {
+  content: "";
+  position: absolute;
+  /* Figma uses a container with inset-[-1px] to apply this inner shadow on top of the border */
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow: inset -1px -1px 2px 0px rgba(61, 61, 61, 0.25);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Binary = on (Pressed/Active) */
+.on {
+  background: var(--comp-button-bg-active);
+  box-shadow: var(--comp-button-shadow-active);
+  color: var(--comp-button-icon-color-active);
+}
+
+/* Variant = Filled (Non-Interactive / Static) */
+.filled {
+  background: var(--sys-color-bg-disabled);
+  border-color: transparent;
+  cursor: default;
+  color: var(--comp-button-filled-color, var(--sys-color-text-secondary));
+  box-shadow: none;
+}
+
+/* Variant = Ghost (Offline / Disconnected) */
+.ghost {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.4;
+  color: var(--sys-color-text-inverse); /* White tone for visibility on dark/glass cards */
+  box-shadow: none;
+}
+
+/* Binary = disabled */
+.disabled {
+  background: var(--comp-button-bg-enabled);
+  border-color: var(--comp-button-border-disabled);
+  box-shadow: var(--comp-button-shadow-disabled);
+  color: var(--comp-button-text-disabled);
+  cursor: not-allowed;
+  opacity: var(--comp-button-opacity-disabled);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; 
+}
+
+.label {
+  font-family: var(--ref-font-family-base);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* Variant = Neumorph Dark (for Dark Backgrounds) */
+.neumorphDark {
+  /* Refactored for Transparency on top of Card (#a3a3a3) */
+  background: var(--comp-button-bg-neumorph-dark);
+  box-shadow: var(--comp-button-shadow-neumorph-dark);
+  border: none; /* Remove border entirely to prevent uneven rendering */
+  color: var(--sys-color-text-primary); /* Darker than #555 as requested */
+}
+
+.neumorphDark::after {
+  content: "";
+  position: absolute;
+  /* Figma uses a container with inset-[-1px] to apply this inner shadow on top of the border */
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow: inset -1px -1px 2px 0px rgba(61, 61, 61, 0.25);
+  pointer-events: none;
+  z-index: 2;
+}

@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.location {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--sys-color-text-tertiary);
+    text-transform: uppercase;
+    
+    margin-bottom: 2px;
+}
+
+
+.nameRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.name {
+  margin: 0;
+  font-size: var(--comp-device-name-size);
+  color: var(--comp-device-name-color);
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+/* -- Default Variant (Restored to Text Only, 2 Lines) -- */
+.status {
+  font-family: var(--ref-font-family-base);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--sys-color-text-tertiary);
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  line-height: 1.4;
+  display: block;
+}
+
+.on {
+  color: var(--sys-color-status-active);
+  background-color: transparent;
+}
+
+/* -- Minimal Variant (New) -- */
+.statusContainerMinimal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.captionMinimal {
+    font-family: var(--ref-font-family-base);
+    font-size: 11px;
+    color: var(--sys-color-text-tertiary);
+    font-weight: 600;
+    
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.statusMinimal {
+  font-family: var(--ref-font-family-base);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--sys-color-text-tertiary);
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  line-height: 1;
+  display: block;
+}
+
+.onMinimal {
+  color: var(--sys-color-text-primary);
+  background-color: transparent;
+}

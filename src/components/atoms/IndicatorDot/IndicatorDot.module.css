@@ -1,0 +1,22 @@
+/* Base container for the dot */
+.dot {
+  width: var(--dot-size, 24px);
+  height: var(--dot-size, 24px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* Center on the coordinate */
+  transition: box-shadow 0.2s;
+}
+
+/* Variant: Target (Solid White) */
+.target {
+  background: var(--sys-color-bg-primary);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Variant: Current (Glassmorphism) */
+.current {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

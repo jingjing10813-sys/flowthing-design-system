@@ -1,0 +1,232 @@
+
+.page {
+  width: 100%;
+  max-width: 480px; /* Mobile-ish width constraint */
+  margin: 0 auto;
+  height: 1040px; /* User specified fixed height */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Frame fixed, internal scroll */
+  background-color: var(--color-bg-app); /* Fallback */
+}
+
+.backgroundLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.colorOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Restored Neutral Background via Tokens */
+    background: linear-gradient(180deg, var(--sys-color-page-bg-start) 0%, var(--sys-color-page-bg-end) 100%);
+    mix-blend-mode: screen;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    height: 100%;
+    flex: 1;
+    overflow-y: auto; /* Internal scrolling */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.backButton {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    margin-left: -10px; /* Align icon optically with content edge */
+    cursor: pointer;
+    color: var(--sys-color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.backButton:active {
+    background: rgba(0,0,0,0.05);
+}
+
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.headerSubtitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 14px;
+    color: var(--sys-color-text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.headerMainTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 20px; /* Reduced from 24px */
+    color: var(--sys-color-text-primary);
+    font-weight: 600; /* Reduced from 700 */
+    line-height: 1.2;
+}
+
+.cardRow {
+    margin-bottom: 24px;
+    width: 100%;
+}
+/* .controlRow removed */
+
+.sliderCard {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: var(--comp-card-bg-translucent);
+    padding: 84px 24px 40px 24px; /* Top +60px, Bottom +16px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0; /* Reduced to rely on previous card's 24px bottom margin */
+    margin-bottom: 32px; /* Reduced from 48px */
+    box-sizing: border-box;
+}
+
+.readoutContainer {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.readoutValue {
+    font-family: var(--ref-font-family-base);
+    font-size: 32px;
+    font-weight: 400; /* Regular */
+    color: var(--sys-color-text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.readoutLabel {
+    font-family: var(--ref-font-family-base);
+    font-size: 16px;
+    color: var(--sys-color-text-tertiary);
+    font-weight: 400;
+}
+
+.sliderCenterColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%; /* Ensure full width for slider container */
+}
+
+.sliderLimitLabel {
+    font-family: var(--ref-font-family-base);
+    font-size: 20px;
+    font-weight: 300; /* Light */
+    color: var(--sys-color-text-secondary);
+    text-align: center;
+}
+
+.controlsDisabled {
+    opacity: var(--sys-opacity-disabled);
+    pointer-events: none;
+    filter: grayscale(0.2);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.tempControlRow {
+    width: 100%;
+    margin-bottom: 32px; /* Reduced from 48px */
+    padding: 0 12px; /* Reduced from 20px to 12px */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modeRow {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 12px; /* Reduced from 20px to 12px */
+    /* Margin removed/handled via inline style or separate rule */
+}
+
+.chipGroup {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tempHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sectionTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 18px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+}
+
+.tempValue {
+    font-family: var(--ref-font-family-base);
+    font-size: 16px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+}
+
+

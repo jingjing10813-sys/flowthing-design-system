@@ -1,0 +1,23 @@
+.gaugeSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.track {
+  fill: none;
+  stroke: var(--comp-gauge-track-stroke);
+  stroke-linecap: round;
+  transition: all 0.3s ease;
+}
+
+.progress {
+  fill: none;
+  stroke: url(#tempGradient); /* We might want to make this ID dynamic or reusable */
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease, stroke-dashoffset 0.3s ease;
+}

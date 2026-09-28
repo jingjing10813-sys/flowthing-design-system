@@ -1,0 +1,197 @@
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 1040px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg-app);
+  
+  /* Apply Cool Color Theme to specific components within this scope */
+  --comp-slider-active-color: var(--sys-color-status-cool);
+  --comp-chip-active-bg: var(--sys-color-status-cool);
+  --sys-color-status-active: var(--sys-color-status-cool); /* Override global active for this page */
+}
+
+.backgroundLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.colorOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--sys-color-page-bg-start) 0%, var(--sys-color-page-bg-end) 100%);
+    mix-blend-mode: screen;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    height: 100%;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.backButton {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    margin-left: -10px;
+    cursor: pointer;
+    color: var(--sys-color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.backButton:active {
+    background: rgba(0,0,0,0.05);
+}
+
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.headerSubtitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 14px;
+    color: var(--sys-color-text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.headerMainTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 20px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.cardRow {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+
+
+/* Main Control Card - Consistent with Lighting/AC styles */
+.mainControlCard {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: var(--comp-card-bg-translucent);
+    padding: 84px 24px 32px 24px; /* Top padding for readout */
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.readoutContainer {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.readoutValue {
+    font-family: var(--ref-font-family-base);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--sys-color-text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.readoutLabel {
+    font-family: var(--ref-font-family-base);
+    font-size: 16px;
+    color: var(--sys-color-text-tertiary);
+    font-weight: 400;
+}
+
+.sliderWrapper {
+    width: 100%;
+    padding: 0;
+}
+
+.sliderLabels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--sys-color-text-secondary);
+}
+
+.bottomControls {
+    margin-top: 12px;
+    margin-bottom: 40px;
+}
+
+.sectionTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 18px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.chipContainer {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}

@@ -1,0 +1,8 @@
+.handle {
+    width: 58px;
+    height: 5px;
+    background-color: var(--ref-palette-neutral-700);
+    border-radius: 14px;
+    box-shadow: none; /* Explicitly no shadow as requested */
+    pointer-events: none; /* Handle itself shouldn't capture events usually, container does */
+}

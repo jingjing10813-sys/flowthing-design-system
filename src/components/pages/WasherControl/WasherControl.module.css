@@ -1,0 +1,214 @@
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 1040px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg-app);
+}
+
+.backgroundLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.colorOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--sys-color-page-bg-start) 0%, var(--sys-color-page-bg-end) 100%);
+    mix-blend-mode: screen;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    height: 100%;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.backButton {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    margin-left: -10px;
+    cursor: pointer;
+    color: var(--sys-color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.backButton:active {
+    background: rgba(0,0,0,0.05);
+}
+
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.headerSubtitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 14px;
+    color: var(--sys-color-text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.headerMainTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 20px;
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.cardRow {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+/* Main Control Card - Consistent with Lighting/AC */
+.mainControlCard {
+    position: relative;
+    width: 100%;
+    min-height: 240px; /* Use min-height instead of fixed height */
+    border-radius: 24px;
+    background-color: var(--comp-card-bg-translucent);
+    /* Top padding increased to clear absolute Key/Value readout */
+    padding: 96px 24px 32px 24px; 
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Buttons at bottom */
+}
+
+.readoutContainer {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.readoutValue {
+    font-family: var(--ref-font-family-base);
+    font-size: 32px; /* Matched to LightingControl (32px) */
+    font-weight: 400; /* Regular weight */
+    color: var(--sys-color-text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.readoutLabel {
+    font-family: var(--ref-font-family-base);
+    font-size: 16px; /* Matched to LightingControl (16px) */
+    color: var(--sys-color-text-tertiary);
+    font-weight: 400;
+}
+
+.controlsDisabled {
+    opacity: 0.4;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.statusBadge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--comp-card-bg-translucent);
+    backdrop-filter: blur(4px);
+    color: var(--sys-color-text-primary);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.mainButtonRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Push to bottom if content varies */
+}
+
+.secondaryControls {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Increased gap between sections */
+}
+
+.controlSection {
+    margin-bottom: 0;
+}
+
+.sectionTitle {
+    font-family: var(--ref-font-family-base);
+    font-size: 18px; /* Matched to section titles (18px) */
+    color: var(--sys-color-text-primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.chipGroup {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}

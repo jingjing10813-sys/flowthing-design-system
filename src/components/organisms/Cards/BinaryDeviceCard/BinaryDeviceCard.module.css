@@ -1,0 +1,93 @@
+.card {
+  /* Override text colors for Off state (Dark background) */
+  --comp-device-name-color: var(--comp-device-name-color-inverse);
+  --sys-color-text-tertiary: var(--comp-device-status-color-inverse);
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 140px;
+  background-color: var(--comp-card-bg-off); /* Default to OFF state color */
+  border-radius: var(--comp-card-radius);
+  padding: 20px; /* Consolidate to token if available, keeping 20px for now */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  /* overflow: hidden; */ /* Removed: was clipping button borders (::after with inset: -1px) */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--sys-shadow-md);
+}
+
+/* Compact (Half-Width) Variant */
+.compact {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px; 
+}
+
+.compact .infoWrapper {
+  width: 100%;
+  align-items: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+
+.compact .actionWrapper {
+  align-self: flex-end;
+}
+
+.cardOn {
+    background: var(--comp-card-bg-on);
+    box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.active {
+    background-color: var(--comp-card-bg); /* ON state color (#fafafa) */
+    
+    /* Reset text colors for On state (Light background) */
+    --comp-device-name-color: var(--sys-color-text-primary);
+    --sys-color-text-tertiary: var(--sys-color-text-tertiary); /* Restore default tertiary */
+}
+
+/* Minimal Variant Specifics */
+.cardMinimal {
+    align-items: center; /* Center alignment for minimal */
+    box-shadow: none; /* No shadow for detail page */
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+}
+
+.infoWrapperMinimal {
+    padding-top: 0;
+}
+
+.actionWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusText {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--comp-device-status-color);
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+

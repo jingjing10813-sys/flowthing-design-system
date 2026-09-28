@@ -1,0 +1,389 @@
+[
+  {
+    "id": "button",
+    "title": "Button",
+    "description": "동작을 실행하거나 전원 상태를 표현하는 버튼입니다.",
+    "group": "atoms",
+    "source": "src/components/atoms/Button/Button.jsx",
+    "tokens": [
+      "--comp-button-bg-active",
+      "--comp-button-bg-enabled",
+      "--comp-button-bg-neumorph-dark",
+      "--comp-button-border-default",
+      "--comp-button-border-disabled",
+      "--comp-button-filled-color",
+      "--comp-button-icon-color-active",
+      "--comp-button-opacity-disabled",
+      "--comp-button-radius",
+      "--comp-button-shadow-active",
+      "--comp-button-shadow-disabled",
+      "--comp-button-shadow-neumorph-dark",
+      "--comp-button-size",
+      "--comp-button-text-default",
+      "--comp-button-text-disabled",
+      "--ref-font-family-base",
+      "--sys-color-bg-disabled",
+      "--sys-color-text-inverse",
+      "--sys-color-text-primary",
+      "--sys-color-text-secondary",
+      "--sys-shadow-neu-flat-dark",
+      "--sys-shadow-neu-flat-light",
+      "--sys-typescale-body-small"
+    ],
+    "behaviors": [
+      "binary",
+      "action"
+    ]
+  },
+  {
+    "id": "chip",
+    "title": "Chip",
+    "description": "필터와 모드를 간결하게 선택합니다.",
+    "group": "atoms",
+    "source": "src/components/atoms/Chip/Chip.jsx",
+    "tokens": [
+      "--ref-palette-neutral-0",
+      "--ref-palette-neutral-1000",
+      "--sys-color-text-primary",
+      "--sys-color-text-secondary",
+      "--sys-font-family-main",
+      "--sys-shadow-md",
+      "--sys-typescale-body-small"
+    ],
+    "behaviors": [
+      "state"
+    ]
+  },
+  {
+    "id": "indicator-dot",
+    "title": "IndicatorDot",
+    "description": "현재 값과 목표 값의 위치를 구분합니다.",
+    "group": "atoms",
+    "source": "src/components/atoms/IndicatorDot/IndicatorDot.jsx",
+    "tokens": [
+      "--dot-size",
+      "--sys-color-bg-primary"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "slider-handle",
+    "title": "SliderHandle",
+    "description": "수직·수평 컨트롤의 막대형 핸들입니다.",
+    "group": "atoms",
+    "source": "src/components/atoms/SliderHandle/SliderHandle.jsx",
+    "tokens": [
+      "--sys-color-bg-secondary"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "slider-thumb",
+    "title": "SliderThumb",
+    "description": "슬라이더에서 잡고 움직이는 원형 핸들입니다.",
+    "group": "atoms",
+    "source": "src/components/atoms/SliderThumb/SliderThumb.jsx",
+    "tokens": [
+      "--comp-slider-thumb-bg",
+      "--comp-slider-thumb-border",
+      "--comp-slider-thumb-shadow",
+      "--comp-slider-thumb-shadow-active",
+      "--comp-slider-thumb-size"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "slider-track",
+    "title": "SliderTrack",
+    "description": "슬라이더의 이동 범위를 나타내는 배경입니다.",
+    "group": "atoms",
+    "source": "src/components/atoms/SliderTrack/SliderTrack.jsx",
+    "tokens": [
+      "--comp-slider-track-bg",
+      "--comp-slider-track-border",
+      "--comp-slider-track-height",
+      "--comp-slider-track-radius",
+      "--comp-slider-track-shadow"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "action",
+    "title": "Action",
+    "description": "누르는 순간 동작을 실행하는 버튼입니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Binary/Action/Action.jsx",
+    "tokens": [],
+    "behaviors": [
+      "action"
+    ]
+  },
+  {
+    "id": "circular-gauge",
+    "title": "CircularGauge",
+    "description": "원형 트랙과 진행 구간을 표시합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Circular/Gauge/CircularGauge.jsx",
+    "tokens": [
+      "--color-temp-cool",
+      "--color-temp-neutral",
+      "--color-temp-warm",
+      "--comp-gauge-track-stroke"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "temperature-control",
+    "title": "TemperatureControl",
+    "description": "현재 온도와 목표 온도를 함께 표시하고 조절합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Circular/TemperatureControl/TemperatureControl.jsx",
+    "tokens": [],
+    "behaviors": [
+      "linear"
+    ]
+  },
+  {
+    "id": "device-info",
+    "title": "DeviceInfo",
+    "description": "기기 이름과 위치, 현재 상태를 표시합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Display/DeviceInfo/DeviceInfo.jsx",
+    "tokens": [
+      "--comp-device-name-color",
+      "--comp-device-name-size",
+      "--ref-font-family-base",
+      "--sys-color-status-active",
+      "--sys-color-text-primary",
+      "--sys-color-text-tertiary"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "readout",
+    "title": "Readout",
+    "description": "측정값과 단위, 설명을 함께 표시합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Display/Readout/Readout.jsx",
+    "tokens": [
+      "--sys-color-text-primary",
+      "--sys-color-text-secondary"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "adaptive-light-slider",
+    "title": "AdaptiveLightSlider",
+    "description": "밝기에 따라 빛과 그림자가 반응하는 슬라이더입니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Linear/AdaptiveLightSlider/AdaptiveLightSliderNew.jsx",
+    "tokens": [
+      "--comp-slider-thumb-bg",
+      "--slider-gradient-silver-vertical",
+      "--slider-knob-shadow-large",
+      "--slider-thumb-border-color",
+      "--slider-thumb-gradient-matte"
+    ],
+    "behaviors": [
+      "linear"
+    ]
+  },
+  {
+    "id": "color-temperature-slider",
+    "title": "ColorTemperatureSlider",
+    "description": "따뜻한 빛부터 차가운 빛까지 색온도를 조절합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Linear/ColorTemperatureSlider/ColorTemperatureSlider.jsx",
+    "tokens": [
+      "--comp-slider-gradient-temperature"
+    ],
+    "behaviors": [
+      "linear"
+    ]
+  },
+  {
+    "id": "horizontal-slider",
+    "title": "HorizontalSlider",
+    "description": "가로 방향으로 위치와 수치를 조절합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Linear/HorizontalSlider/HorizontalSlider.jsx",
+    "tokens": [
+      "--color-bg-white",
+      "--color-text-1",
+      "--font-family",
+      "--slider-fill-bg",
+      "--slider-fill-shadow",
+      "--slider-gradient-silver-warm",
+      "--slider-icon-color-light",
+      "--slider-track-bg",
+      "--slider-track-shadow"
+    ],
+    "behaviors": [
+      "linear"
+    ]
+  },
+  {
+    "id": "slider",
+    "title": "Slider",
+    "description": "연속값 또는 일정한 간격의 값을 조절합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Linear/Slider/Slider.jsx",
+    "tokens": [
+      "--comp-slider-fill-bg",
+      "--comp-slider-label-active-color",
+      "--comp-slider-label-color",
+      "--comp-slider-tick-active-bg",
+      "--comp-slider-tick-bg",
+      "--font-family"
+    ],
+    "behaviors": [
+      "linear"
+    ]
+  },
+  {
+    "id": "vertical-slider-no-icons",
+    "title": "VerticalSliderNoIcons",
+    "description": "아이콘 없이 세로 방향으로 값을 조절하는 컨트롤입니다. Vertical Slider의 showIcons={false} 버전입니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Linear/VerticalSlider/VerticalSlider.jsx",
+    "tokens": [
+      "--color-bg-white",
+      "--color-text-1",
+      "--font-family",
+      "--slider-gradient-silver-vertical",
+      "--slider-icon-color-light",
+      "--slider-thumb-gradient-matte"
+    ],
+    "behaviors": [
+      "linear"
+    ]
+  },
+  {
+    "id": "dropdown",
+    "title": "Dropdown",
+    "description": "여러 항목에서 하나를 선택합니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/Selection/Dropdown/Dropdown.jsx",
+    "tokens": [
+      "--color-bg-white",
+      "--color-fill-1",
+      "--color-fill-2",
+      "--color-status-cool",
+      "--color-text-1",
+      "--color-text-2",
+      "--color-text-3",
+      "--font-family",
+      "--sys-typescale-body-small"
+    ],
+    "behaviors": [
+      "state"
+    ]
+  },
+  {
+    "id": "toggle-btn",
+    "title": "ToggleBtn",
+    "description": "두 가지 상태를 전환하는 스위치입니다.",
+    "group": "molecules",
+    "source": "src/components/molecules/ToggleBtn/ToggleBtn.jsx",
+    "tokens": [
+      "--color-shadow-dark",
+      "--color-shadow-light",
+      "--comp-button-bg-enabled",
+      "--comp-toggle-bg-off",
+      "--comp-toggle-bg-on",
+      "--comp-toggle-border-off",
+      "--comp-toggle-border-on",
+      "--sys-color-border-secondary"
+    ],
+    "behaviors": [
+      "binary"
+    ]
+  },
+  {
+    "id": "blind-curtain",
+    "title": "BlindCurtain",
+    "description": "블라인드의 개폐 모습을 표현하는 컨트롤입니다.",
+    "group": "organisms",
+    "source": "src/components/organisms/BlindCurtain/BlindCurtain.jsx",
+    "tokens": [
+      "--sys-color-text-primary",
+      "--sys-color-text-secondary"
+    ],
+    "behaviors": [
+      "linear"
+    ]
+  },
+  {
+    "id": "action-device-card",
+    "title": "ActionDeviceCard",
+    "description": "재생 등 실행 동작을 제공하는 기기 카드입니다.",
+    "group": "organisms",
+    "source": "src/components/organisms/Cards/ActionDeviceCard/ActionDeviceCard.jsx",
+    "tokens": [
+      "--comp-card-bg",
+      "--comp-card-bg-off",
+      "--comp-card-radius",
+      "--comp-device-name-color-inverse",
+      "--comp-device-status-color-inverse",
+      "--sys-color-text-primary",
+      "--sys-color-text-tertiary",
+      "--sys-shadow-md"
+    ],
+    "behaviors": [
+      "action"
+    ]
+  },
+  {
+    "id": "binary-device-card",
+    "title": "BinaryDeviceCard",
+    "description": "전원 상태와 기기 정보를 함께 보여주는 카드입니다.",
+    "group": "organisms",
+    "source": "src/components/organisms/Cards/BinaryDeviceCard/BinaryDeviceCard.jsx",
+    "tokens": [
+      "--comp-card-bg",
+      "--comp-card-bg-off",
+      "--comp-card-bg-on",
+      "--comp-card-radius",
+      "--comp-device-name-color-inverse",
+      "--comp-device-status-color",
+      "--comp-device-status-color-inverse",
+      "--sys-color-text-primary",
+      "--sys-color-text-tertiary",
+      "--sys-shadow-md"
+    ],
+    "behaviors": [
+      "binary"
+    ]
+  },
+  {
+    "id": "tab-bar",
+    "title": "TabBar",
+    "description": "스마트홈 하단 탐색의 시각적 예시입니다.",
+    "group": "organisms",
+    "source": "src/components/organisms/Navigation/TabBar/TabBar.jsx",
+    "tokens": [
+      "--sys-color-text-primary",
+      "--sys-color-text-tertiary",
+      "--sys-font-family-main"
+    ],
+    "behaviors": []
+  },
+  {
+    "id": "speaker-volume-control",
+    "title": "SpeakerVolumeControl",
+    "description": "스피커의 볼륨을 조절합니다.",
+    "group": "organisms",
+    "source": "src/components/organisms/SpeakerVolumeControl/SpeakerVolumeControl.jsx",
+    "tokens": [
+      "--comp-slider-icon-color-dark",
+      "--comp-slider-icon-color-light",
+      "--comp-slider-track-bg",
+      "--comp-slider-track-bg-silver",
+      "--sys-color-status-danger",
+      "--sys-color-text-tertiary"
+    ],
+    "behaviors": [
+      "linear"
+    ]
+  }
+]

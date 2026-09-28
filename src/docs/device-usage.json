@@ -1,0 +1,106 @@
+{
+  "button": [
+    "dashboard",
+    "lighting",
+    "airconditioner",
+    "curtain",
+    "speaker",
+    "washer",
+    "refrigerator"
+  ],
+  "chip": [
+    "lighting",
+    "airconditioner",
+    "washer",
+    "refrigerator"
+  ],
+  "indicator-dot": [
+    "dashboard",
+    "airconditioner"
+  ],
+  "slider-handle": [
+    "dashboard",
+    "curtain",
+    "speaker"
+  ],
+  "slider-thumb": [
+    "lighting",
+    "airconditioner",
+    "curtain",
+    "refrigerator"
+  ],
+  "slider-track": [
+    "refrigerator"
+  ],
+  "action": [
+    "dashboard",
+    "airconditioner"
+  ],
+  "circular-gauge": [
+    "dashboard",
+    "airconditioner"
+  ],
+  "temperature-control": [
+    "dashboard",
+    "airconditioner"
+  ],
+  "device-info": [
+    "dashboard",
+    "lighting",
+    "airconditioner",
+    "curtain",
+    "speaker",
+    "washer",
+    "refrigerator"
+  ],
+  "readout": [
+    "dashboard",
+    "airconditioner"
+  ],
+  "adaptive-light-slider": [
+    "lighting"
+  ],
+  "color-temperature-slider": [
+    "lighting"
+  ],
+  "horizontal-slider": [
+    "dashboard",
+    "curtain"
+  ],
+  "slider": [
+    "refrigerator"
+  ],
+  "dropdown": [
+    "airconditioner",
+    "curtain"
+  ],
+  "toggle-btn": [
+    "airconditioner",
+    "curtain"
+  ],
+  "blind-curtain": [],
+  "action-device-card": [
+    "dashboard"
+  ],
+  "binary-device-card": [
+    "dashboard",
+    "lighting",
+    "airconditioner",
+    "curtain",
+    "speaker",
+    "washer",
+    "refrigerator"
+  ],
+  "tab-bar": [
+    "lighting",
+    "airconditioner",
+    "curtain",
+    "speaker",
+    "washer",
+    "refrigerator"
+  ],
+  "speaker-volume-control": [
+    "speaker"
+  ],
+  "vertical-slider-no-icons": []
+}

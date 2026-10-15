@@ -33,7 +33,7 @@ export default function DesignerHandoff() {
     <div className="eyebrow">FOR DESIGNERS · MCP HANDOFF</div>
     <h1>화면을 넘기는 대신,<br />판단 근거까지 연결합니다.</h1>
     <p className="lead">Figma 시안을 Flowthing의 기존 컴포넌트·토큰·구현 코드와 대조해 개발자가 이어서 판단할 수 있는 핸드오프를 만듭니다.</p>
-    <div className="handoff-actions"><a className="handoff-primary" href="#handoff-steps">가이드 시작하기 <span aria-hidden="true">↘</span></a><a className="handoff-secondary" href="#/components/binary-device-card">예시 컴포넌트 보기 ↗</a></div>
+    <div className="handoff-actions"><button className="handoff-primary" type="button" onClick={() => document.getElementById('handoff-steps')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>가이드 시작하기 <span aria-hidden="true">↘</span></button><a className="handoff-secondary" href="#/components/binary-device-card">예시 컴포넌트 보기 ↗</a></div>
 
     <section id="handoff-structure">
       <div className="handoff-section-heading"><span>01 / 연결 구조</span><h2>두 맥락을 함께 읽습니다</h2><p>Figma MCP는 선택한 프레임의 디자인 맥락을 전달합니다. Flowthing 문서와 저장소 코드는 컴포넌트의 실제 지원 범위를 확인하는 별도 근거입니다.</p></div>

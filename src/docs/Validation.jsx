@@ -1,6 +1,7 @@
 import Guardrails from '../components/pages/Guardrails';
 
 const pages = [
+  ['designer-handoff', 'Designer Handoff', 'Figma 시안을 기존 컴포넌트와 코드에 연결해 근거가 남는 핸드오프를 만듭니다.'],
   ['guide', 'Developer Guide', '로컬 실행과 컴포넌트 사용 방법을 확인하고 개발을 시작합니다.'],
   ['patterns', 'Patterns', '기기 연결, 명령 처리, 실패 복구 등 반복되는 동작을 검토합니다.'],
   ['ai-guardrails', 'AI Guardrails', 'AI가 참조할 컴포넌트 조합, 값 범위, 기기 호환성 규칙을 확인합니다.'],
@@ -23,5 +24,5 @@ export default function Validation({ page }) {
     ['Accessibility', '키보드 조작, 포커스 표시, 이름과 상태 전달, 텍스트 대비를 확인합니다. 기존 컴포넌트의 접근성 검증은 별도 개선 작업입니다.'],
     ['Device States', '요청, 처리 중, 완료, 실패, 연결 끊김을 구분합니다. 실제 기기 상태를 확인하지 못한 경우 확정된 값처럼 표현하지 않습니다.'],
   ].map(([title,description])=><div className="pattern-row" key={title}><h2>{title}</h2><p>{description}</p></div>)}<div className="page-pagination"><a href="#/development/ai-guardrails">← AI Guardrails</a><a href="#/components">Components →</a></div></>;
-  return <><div className="eyebrow">BUILD & REVIEW</div><h1>Development</h1><p className="lead">개발 시작부터 컴포넌트 사용, 동작 패턴과 설계 규칙까지 한곳에서 확인합니다.</p><a className="ai-workspace-entry" href="#/ai"><span><strong>Flowthing AI</strong><span>기기 기능과 디자인 시스템 기준을 함께 살펴보세요.</span></span><span>채팅 시작하기 ↗</span></a><div className="catalog-grid">{pages.map(([id,title,description])=><a key={id} href={'#/development/'+id} className="catalog-card"><span className="card-category">DEVELOPMENT</span><h2>{title}<span aria-hidden="true">↗</span></h2><p>{description}</p></a>)}</div><div className="callout"><strong>현재 제공 범위</strong><p>패턴과 규칙을 확인하는 문서 공간입니다. 명세 자동 검사와 변경 영향 분석은 후속 구현 대상입니다.</p></div></>;
+  return <><div className="eyebrow">BUILD & REVIEW</div><h1>Development</h1><p className="lead">디자이너의 핸드오프부터 개발 시작, 동작 패턴과 설계 규칙까지 같은 문서를 참조합니다.</p><a className="ai-workspace-entry" href="#/ai"><span><strong>Flowthing AI</strong><span>기기 기능과 디자인 시스템 기준을 함께 살펴보세요.</span></span><span>채팅 시작하기 ↗</span></a><div className="catalog-grid">{pages.map(([id,title,description])=><a key={id} href={'#/development/'+id} className="catalog-card"><span className="card-category">{id==='designer-handoff'?'FOR DESIGNERS':id==='guide'?'FOR DEVELOPERS':'DEVELOPMENT'}</span><h2>{title}<span aria-hidden="true">↗</span></h2><p>{description}</p></a>)}</div><div className="callout"><strong>현재 제공 범위</strong><p>핸드오프 절차와 패턴·규칙을 확인하는 문서 공간입니다. 방문자의 Figma 파일에 직접 연결하거나 명세를 자동 검사하지는 않습니다.</p></div></>;
 }

@@ -11,7 +11,7 @@ const components=['BinaryDeviceCard','AdaptiveLightSlider','Button','DeviceInfo'
 export default function DesignerWorkspace({frame,onFrame}){
   const [atomicComponent,setAtomicComponent]=useState(null);
   const [inspectorTab,setInspectorTab]=useState('code');
-  const [canvasView,setCanvasView]=useState('components');
+  const [canvasView,setCanvasView]=useState('atomic');
   const [selectedId,setSelectedId]=useState(null);
   const [collapsed,setCollapsed]=useState(false);
   const [connecting,setConnecting]=useState(!frame);
@@ -25,7 +25,7 @@ export default function DesignerWorkspace({frame,onFrame}){
   },[frame,onFrame]);
   const selected=frame?.layers.find(layer=>layer.id===selectedId)||frame?.layers[0];
   const mapped=frame?.layers.filter(layer=>frame.mappings[layer.id])||[];
-  function openDemo(){setCanvasView('components');onFrame(demoFrame());setConnecting(false);setSelectedId(null);}
+  function openDemo(){setCanvasView('atomic');onFrame(demoFrame());setConnecting(false);setSelectedId(null);}
   const componentLayers=frame?.layers.filter(layer=>/component|instance/i.test(layer.type)||frame.mappings[layer.id])||[];
   const visibleLayers=componentLayers.length?componentLayers:frame?.layers||[];
   return <div className={`designer-studio ${collapsed?'is-collapsed':''}`}>
